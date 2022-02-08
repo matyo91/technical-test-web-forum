@@ -8,6 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class CommentType extends AbstractType
 {
@@ -18,6 +19,10 @@ class CommentType extends AbstractType
                 'constraints' => [
                     new NotBlank(),
                 ]
+            ])
+            ->add('responseComment', EntityType::class, [
+                'class' => Comment::class,
+                'required' => false
             ])
             ->add('page')
         ;

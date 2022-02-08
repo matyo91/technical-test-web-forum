@@ -35,7 +35,7 @@ class CommentController extends AbstractController
             $data[] = [
                 'id' => $comment->getId(),
                 'content' => $comment->getContent(),
-                'createDate' => $comment->getCreateDate()->format('c'),
+                'createDate' => $comment->getCreateDate()->format('d-m-Y à H:i:s'),
                 'responseComment' => $comment->getResponseComment() ? $comment->getResponseComment()->getId() : null
             ];
         }
