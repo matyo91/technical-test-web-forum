@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  mysql:
+    container_name: technical-test-web-forum-mysql
+    hostname: technical-test-web-forum-mysql
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - ./var/db:/var/lib/mysql
+    ports:
+      - '3306:3306'
