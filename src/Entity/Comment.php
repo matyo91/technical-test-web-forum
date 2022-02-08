@@ -29,6 +29,9 @@ class Comment
     #[ORM\OneToMany(mappedBy: 'responseComment', targetEntity: self::class)]
     private $comments;
 
+    #[ORM\Column(type: 'integer')]
+    private $page;
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
@@ -101,6 +104,18 @@ class Comment
                 $comment->setResponseComment(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPage(): ?int
+    {
+        return $this->page;
+    }
+
+    public function setPage(int $page): self
+    {
+        $this->page = $page;
 
         return $this;
     }

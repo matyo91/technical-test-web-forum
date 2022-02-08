@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page {{ page }} du forum web{% endblock %}
+
+{% block content %}
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 fw-normal">Bienvenue sur la page {{ page }}</h1>
+    <p class="fs-5 text-muted">Ecrire un nouveau commentaire</p>
+    <div id="tread" data-page="{{ page }}"></div>
+</div>
+{% endblock %}
