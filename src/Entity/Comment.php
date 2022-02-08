@@ -20,7 +20,7 @@ class Comment
     #[ORM\Column(type: 'text')]
     private $content;
 
-    #[ORM\Column(type: 'date')]
+    #[ORM\Column(type: 'datetime')]
     private $createDate;
 
     #[ORM\ManyToOne(targetEntity: self::class, inversedBy: 'comments')]
